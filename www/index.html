@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello wasm-pack!</title>
+    <style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>This page contains webassembly and javascript content, please enable javascript in your browser.</noscript>
+
+    <input type="file" id="image-input">
+    <div>
+      <canvas id="original-image-canvas"></canvas>
+      <canvas id="grayscale-image-canvas"></canvas>
+      <canvas id="corrupted-image-canvas"></canvas>
+      <canvas id="reconstructed-image-canvas"></canvas>
+    </div>
+    <div>
+      <label for="steps-per-click">Steps per Click</label>
+      <input type="range" id="steps-per-click" name="steps-per-click" min="1" max="1000">
+
+      <label for="eta">Eta</label>
+      <input type="text" id="eta" name="eta" value="0.01">
+
+      <label for="prob">Prob</label>
+      <input type="range" id="prob" name="prob" min="0" max="1" step="0.01">
+
+      <button id="gradient-step">Step</button>
+      <button id="reset-btn">Reset</button>
+    </div>
+    
+    <script src="./bootstrap.js"></script>
+  </body>
+</html>
